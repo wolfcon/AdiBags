@@ -4,13 +4,12 @@ Copyright 2010 Adirelle (adirelle@tagada-team.net)
 All rights reserved.
 --]]
 
-local addonName, addon = ...
-local L = addon.L
+local addonName = "AdiBags"
+local addon = LibStub('AceAddon-3.0'):NewAddon(addonName, 'AceEvent-3.0', 'AceBucket-3.0', 'AceHook-3.0')
 
-LibStub('AceAddon-3.0'):NewAddon(addon, addonName, 'AceEvent-3.0', 'AceBucket-3.0', 'AceHook-3.0')
---@debug@
-_G[addonName] = addon
---@end-debug@
+local L = _G.AdiBags_L
+addon.L = L
+_G.AdiBags_L = nil
 
 --------------------------------------------------------------------------------
 -- Debug stuff

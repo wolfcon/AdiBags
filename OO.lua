@@ -4,7 +4,9 @@ Copyright 2010 Adirelle (adirelle@tagada-team.net)
 All rights reserved.
 --]]
 
-local addonName, addon = ...
+local addonName = "AdiBags"
+local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
+
 local safecall = addon.safecall
 
 --------------------------------------------------------------------------------

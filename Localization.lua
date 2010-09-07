@@ -4,7 +4,7 @@ Copyright 2010 Adirelle (adirelle@tagada-team.net)
 All rights reserved.
 --]]
 
-local addonName, addon = ...
+local addonName = "AdiBags"
 
 local L = setmetatable({}, {
 	__index = function(self, key)
@@ -17,7 +17,7 @@ local L = setmetatable({}, {
 		return tostring(key)
 	end,
 })
-addon.L = L
+_G.AdiBags_L = L
 
 L["QUIVER_TAG"] = "Qu"
 L["AMMO_TAG"] = "Am"

@@ -4,7 +4,8 @@ Copyright 2010 Adirelle (adirelle@tagada-team.net)
 All rights reserved.
 --]]
 
-local addonName, addon = ...
+local addonName = "AdiBags"
+local addon = LibStub('AceAddon-3.0'):GetAddon(addonName)
 local L = addon.L
 
 local mod = addon:NewModule('CurrencyFrame', 'AceEvent-3.0')
