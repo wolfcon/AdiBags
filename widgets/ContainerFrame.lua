@@ -155,6 +155,7 @@ function containerProto:OnCreate(name, bagIds, isBank)
 
 	local content = CreateFrame("Frame", nil, self)
 	content:SetPoint("TOPLEFT", BAG_INSET, -addon.TOP_PADDING)
+	content.SetSize = addon.SetSize
 	self.Content = content
 	self:AddWidget(content)
 

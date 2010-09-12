@@ -56,7 +56,8 @@ function mod:OnBagFrameCreated(bag)
 	local frame = bag:GetFrame()
 
 	local searchBox = CreateFrame("Frame", addonName.."SearchFrame", frame)
-	searchBox:SetSize(100, 18)
+	searchBox:SetWidth(100)
+	searchBox:SetHeight(18)
 	self.widget = searchBox
 
 	local searchEditBox = CreateFrame("EditBox", nil, searchBox, "InputBoxTemplate")
@@ -78,7 +79,8 @@ function mod:OnBagFrameCreated(bag)
 
 	local searchClearButton = CreateFrame("Button", nil, searchBox, "UIPanelButtonTemplate")
 	searchClearButton:SetPoint("TOPRIGHT", searchBox)
-	searchClearButton:SetSize(20, 20)
+	searchClearButton:SetWidth(20)
+	searchClearButton:SetHeight(20)
 	searchClearButton:SetText("X")
 	searchClearButton:Hide()
 	searchClearButton:SetScript('OnClick', function() SearchEditBox_OnEscapePressed(searchEditBox) end)

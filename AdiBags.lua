@@ -348,6 +348,12 @@ local function safecall(funcOrSelf, argOrMethod, ...)
 end
 addon.safecall = safecall
 
+local function SetSize(widget, width, height)
+	widget:SetWidth(width)
+	widget:SetHeight(height)
+end
+addon.SetSize = SetSize
+
 local function WidgetTooltip_OnEnter(self)
 	GameTooltip:SetOwner(self, self.tooltipAnchor, self.tootlipAnchorXOffset, self.tootlipAnchorYOffset)
 	self:UpdateTooltip(self)
@@ -649,7 +655,8 @@ end
 
 function addon:CreateBagAnchor()
 	local anchor = self:CreateAnchorWidget(UIParent, "anchor", L["AdiBags Anchor"])
-	anchor:SetSize(80, 80)
+	anchor:SetWidth(80)
+	acnhor:SetHeight(80)
 	anchor:SetFrameStrata("TOOLTIP")
 	anchor:SetBackdrop(self.ANCHOR_BACKDROP)
 	anchor:SetBackdropColor(0, 1, 0, 1)
