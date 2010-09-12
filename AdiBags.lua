@@ -656,7 +656,7 @@ end
 function addon:CreateBagAnchor()
 	local anchor = self:CreateAnchorWidget(UIParent, "anchor", L["AdiBags Anchor"])
 	anchor:SetWidth(80)
-	acnhor:SetHeight(80)
+	anchor:SetHeight(80)
 	anchor:SetFrameStrata("TOOLTIP")
 	anchor:SetBackdrop(self.ANCHOR_BACKDROP)
 	anchor:SetBackdropColor(0, 1, 0, 1)
