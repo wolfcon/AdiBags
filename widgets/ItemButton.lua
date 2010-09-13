@@ -243,7 +243,7 @@ function buttonProto:UpdateBorder(isolatedEvent)
 			if not border then
 				border = self:CreateTexture("OVERLAY")
 				border:SetWidth(37)
-				border:SetWidth(38)
+				border:SetHeight(38)
 				border:SetPoint("TOP")
 				self.IconQuestTexture = border
 			end
