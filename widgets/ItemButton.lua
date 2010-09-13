@@ -226,12 +226,7 @@ end
 function buttonProto:UpdateBorder(isolatedEvent)
 	if self.hasItem then
 		local texture, r, g, b, a, x1, x2, y1, y2, blendMode = nil, 1, 1, 1, 1, 0, 1, 0, 1, "BLEND"
-		local isQuestItem, questId, isActive = GetContainerItemQuestInfo(self.bag, self.slot)
-		if addon.db.profile.questIndicator and (questId and not isActive) then
-			texture = TEXTURE_ITEM_QUEST_BANG
-		elseif addon.db.profile.questIndicator and (questId or isQuestItem) then
-			texture = TEXTURE_ITEM_QUEST_BORDER
-		elseif addon.db.profile.qualityHighlight then
+		if addon.db.profile.qualityHighlight then
 			local _, _, quality = GetItemInfo(self.itemId)
 			if quality and quality >= ITEM_QUALITY_UNCOMMON then
 				r, g, b = GetItemQualityColor(quality)
@@ -245,6 +240,13 @@ function buttonProto:UpdateBorder(isolatedEvent)
 		end
 		if texture then
 			local border = self.IconQuestTexture
+			if not border then
+				border = self:CreateTexture("OVERLAY")
+				border:SetWidth(37)
+				border:SetWidth(38)
+				border:SetPoint("TOP")
+				self.IconQuestTexture = border
+			end
 			if texture == true then
 				border:SetVertexColor(1, 1, 1, 1)
 				border:SetTexture(r, g, b, a)
@@ -261,7 +263,9 @@ function buttonProto:UpdateBorder(isolatedEvent)
 			return
 		end
 	end
-	self.IconQuestTexture:Hide()
+	if self.IconQuestTexture then
+		self.IconQuestTexture:Hide()
+	end
 	if isolatedEvent then
 		addon:SendMessage('AdiBags_UpdateBorder', self)
 	end

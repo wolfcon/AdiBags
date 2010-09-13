@@ -133,9 +133,6 @@ function addon:SetupDefaultFilters()
 		local questItemFilter = addon:RegisterFilter('Quest', 75, function(self, slotData)
 			if slotData.class == L['Quest'] or slotData.subclass == L['Quest'] then
 				return L['Quest']
-			else
-				local isQuestItem, questId = GetContainerItemQuestInfo(slotData.bag, slotData.slot)
-				return (questId or isQuestItem) and L['Quest']
 			end
 		end)
 		--@noloc]]
