@@ -4,8 +4,13 @@ h3. Installation Instructions
 
 # Download the "classic-bundle" branch you are on now as a ZIP using "Clone or download" -> "Download ZIP"
 # Navigate to your WoW Classic "Interface/AddOns" folder as usual
-# Stick the downloaded files into a new "Interface/AddOns/AdiBags" folder
+# Drill into the downloaded zip until you see a bunch of files and stick them into a new "Interface/AddOns/AdiBags" folder
 # Move the included AdiBags_Config folder up a level, so it lives at "Interface/AddOns/AdiBags_Config", NOT inside the AdiBags folder itself
+
+Troubleshooting:
+* Ensure you have the AdiBags.toc file at "Interface/AddOns/AdiBags/AdiBags.toc"
+* Ensure you have the AdiBags_Config.toc file at "Interface/AddOns/AdiBags_Config/AdiBags_Config.toc"
+* Ensure you installed the AddOn into your classic installation, not retail.
 
 h2. Original README below:
 
